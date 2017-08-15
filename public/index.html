@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Chat</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script><script src="script.js"></script>
+   </head>
+   <body>
+      <div id="main" class="container">
+         <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+               <div class="container"><a href="#" class="brand">Chat node + socket.io</a></div>
+            </div>
+         </div>
+         <div id="chatEntries"></div>
+         <div id="entries" class="row">
+            <input type="text" id="messageInput">
+            <div class="btn-group">
+               <button id="submit" data-loading-text="Send" class="btn">Send</button><button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+               <ul class="dropdown-menu">
+                  <li><a id="edit" href="#modalPseudo" data-toggle="modal"><i class="icon-user"></i>Mudar apelido</a></li>
+                  <li><a id="info" href="#modalInfos" data-toggle="modal"><i class="icon-info-sign"></i>Info</a></li>
+               </ul>
+            </div>
+         </div>
+         <div id="nbUsersDiv">
+            <p><span id="nbUsers"></span> online.</p>
+         </div>
+      </div>
+   </body>
+   <div id="modalPseudo" class="modal fade">
+      <div class="modal-header">
+         <h3>Nick?</h3>
+      </div>
+      <div class="modal-body">
+         <p>Informe seu apelido:</p>
+         <input type="text" id="pseudoInput">
+         <div id="alertPseudo" class="alert alert-error">Esse apelido já está em uso, informe outro.</div>
+      </div>
+      <div class="modal-footer"><button id="pseudoSubmit" class="btn btn-primary">Chat!</button></div>
+   </div>
+   <div id="modalInfos" class="modal fade">
+      <div class="modal-header">
+         <h3>Infos</h3>
+      </div>
+      <div class="modal-body">
+         <p>Infos...</p>
+      </div>
+   </div>
+</html>
